@@ -90,6 +90,9 @@ No hay enlace directo a un modelo: hay que buscar y pulsar la tarjeta. Receta us
    ~1.9 GB). **Sin push**: GitHub da 1 GB gratis de LFS → subirlo requiere ampliar la cuota. Decidir antes de `git push`.
 4. (hecho) Pulido: Planta1 y Fuegito3 reajustados y reexportados.
 5. (hecho) 4 animaciones nuevas en las 24 + caras por clip en el visor; verificado en navegador.
-El usuario quiere trabajar **en local** por ahora (no push).
+6. (hecho) Movimiento mejorado: inercia (head 2 f, top 3 f, tail 4 f de retraso), bucles con modificador Cycles en
+   idle (97 f, 2 respiraciones + cambio de peso), walk (pie que pasa levantado, giro de cadera, rebote) y sleep;
+   los clips de una vez se alargan 4 f. Verificado: bucles cierran exactos, pies/manos opuestos (bonepos).
+Las caras se quedan como están (decisión del usuario: todo 3D, robots sin boca tal cual).
 Ideas siguientes: animar también las shape keys dentro de los clips del GLB (para que un motor de juego reciba la cara
 sin depender del visor), clips extra (p.ej. `faint`, `run`), y mejorar el parpadeo.

@@ -477,29 +477,50 @@ def animate(pet, rig_ob, arm_amp=1.0):
             if 'scl' in d: b.scale = d['scl']
         for b in pb:
             b.keyframe_insert("location", frame=f); b.keyframe_insert("rotation_euler", frame=f); b.keyframe_insert("scale", frame=f)
-    def make(name, frames):
+    # Inercia: head/top/tail llegan LAG fotogramas tarde (la cola más). En clips cíclicos todas las curvas llevan
+    # modificador Cycles (el bucle no salta y el retraso "da la vuelta"); en los demás el clip se alarga para
+    # que la cola termine su movimiento.
+    LAG = {"head": 2, "top": 3, "tail": 4}
+    def fcurves(act):
+        for layer in act.layers:
+            for strip in layer.strips:
+                for cb in strip.channelbags: yield from cb.fcurves
+    def make(name, frames, cyclic=False):
         act = bpy.data.actions.new(f"{pet}_{name}"); act.use_fake_user = True
         ad.action = act
         for f, bones in frames: key(f, **bones)
-        end = frames[-1][0]; ad.action = None
+        end = frames[-1][0]; tail_end = end
+        for fc in fcurves(act):
+            bone = fc.data_path.split('"')[1] if fc.data_path.startswith("pose.bones") else ""
+            lag = LAG.get(bone, 0)
+            if lag:
+                for kp in fc.keyframe_points:
+                    kp.co.x += lag; kp.handle_left.x += lag; kp.handle_right.x += lag
+                if not cyclic: tail_end = max(tail_end, end + lag)
+            if cyclic: fc.modifiers.new('CYCLES')
+        ad.action = None
         tr = ad.nla_tracks.new(); tr.name = name
-        st = tr.strips.new(name, 1, act); st.action_frame_end = end; tr.mute = True
+        st = tr.strips.new(name, 1, act); st.action_frame_end = tail_end; tr.mute = True
     # top/head/tail siguen el mismo "ritmo" secundario: rx = cabeceo, rz = lateral (la cola lo amplifica)
     T = lambda rx, rz=0: {"top": dict(rot=(rx, 0, rz)), "head": dict(rot=(rx * 0.5, 0, rz * 0.6)),
                           "tail": dict(rot=(rx * 1.2, 0, rz * 2.5))}
-    make("idle", [
-        (1, dict(body=dict(scl=(1, 1, 1)), **{"hand.L": dict(rot=(5, 0, 0)), "hand.R": dict(rot=(5, 0, 0))}, **T(0, 4))),
-        (24, dict(body=dict(scl=(1.03, 0.96, 1.03)), **{"hand.L": dict(rot=(-3, 0, 0)), "hand.R": dict(rot=(-3, 0, 0))}, **T(-6, -4))),
-        (48, dict(body=dict(scl=(1, 1, 1)), **{"hand.L": dict(rot=(5, 0, 0)), "hand.R": dict(rot=(5, 0, 0))}, **T(0, 4))),
-    ])
-    def walk(phase):
+    def breath(f, inhale, sway):
+        b = 0.03 * inhale
+        return (f, dict(body=dict(scl=(1 + b, 1 - 1.3 * b, 1 + b), rot=(0, 0, sway)),
+                        **{"hand.L": dict(rot=(5 - 8 * inhale, 0, 0)), "hand.R": dict(rot=(5 - 8 * inhale, 0, 0))},
+                        **T(-6 * inhale, 4 - 3 * sway)))
+    make("idle", [breath(1, 0, 2), breath(25, 1, 0), breath(49, 0, -2), breath(73, 1, 0), breath(97, 0, 2)], cyclic=True)
+    def walk(phase):   # contacto: pies abiertos en el suelo, cuerpo en lo más bajo
         s = 1 if phase == 0 else -1
-        return dict(root=dict(loc=(0, 0, 0)), body=dict(rot=(0, 0, 6 * s), loc=(0, 0.004, 0)),
-                    **{"foot.L": dict(rot=(25 * s, 0, 0), loc=(0, -0.012 if s > 0 else 0, 0)),
-                       "foot.R": dict(rot=(-25 * s, 0, 0), loc=(0, -0.012 if s < 0 else 0, 0)),
-                       "hand.L": dict(rot=(10, 0, -25 * s)), "hand.R": dict(rot=(10, 0, -25 * s))}, **T(4, -8 * s))
-    mid = lambda: dict(body=dict(loc=(0, 0.009, 0)), **{"hand.L": dict(rot=(10, 0, 0)), "hand.R": dict(rot=(10, 0, 0))}, **T(-4))
-    make("walk", [(1, walk(0)), (7, mid()), (13, walk(1)), (19, mid()), (25, walk(0))])
+        return dict(body=dict(rot=(0, -5 * s, 6 * s), loc=(0, 0.0, 0), scl=(1.02, 0.97, 1.02)),
+                    **{"foot.L": dict(rot=(25 * s, 0, 0)), "foot.R": dict(rot=(-25 * s, 0, 0)),
+                       "hand.L": dict(rot=(10, 0, -25 * s)), "hand.R": dict(rot=(10, 0, -25 * s))}, **T(5, -8 * s))
+    def passing(s):    # paso: el pie que va hacia delante pasa levantado, cuerpo en lo más alto
+        # en el contacto previo el pie atrasado es L si s > 0 (medido: foot.L +25 = pie atrás)
+        lift = {("foot.L" if s > 0 else "foot.R"): dict(rot=(0, 0, 0), loc=(0, -0.014, 0))}
+        return dict(body=dict(rot=(0, 0, 2 * s), loc=(0, 0.010, 0), scl=(0.99, 1.02, 0.99)),
+                    **{"hand.L": dict(rot=(10, 0, 0)), "hand.R": dict(rot=(10, 0, 0))}, **lift, **T(-3, -2 * s))
+    make("walk", [(1, walk(0)), (7, passing(1)), (13, walk(1)), (19, passing(-1)), (25, walk(0))], cyclic=True)
     wave_up = lambda a, t: dict(body=dict(rot=(0, 0, -6)), **{"hand.L": dict(rot=(a, 0, 0)), "hand.R": dict(rot=(5, 0, 0))}, **T(0, t))
     make("wave", [(1, dict()), (6, wave_up(55, -6)), (10, wave_up(35, 4)), (14, wave_up(58, -6)), (18, wave_up(35, 4)),
                   (22, wave_up(58, -6)), (26, wave_up(35, 4)), (32, dict())])
@@ -546,7 +567,7 @@ def animate(pet, rig_ob, arm_amp=1.0):
         (36, dict()),
     ])
     nap = lambda b: dict(body=lean(7, scl=(1 + 0.03 * b, 1 - 0.03 * b, 1 + 0.03 * b)), **hands((-8 + 3 * b, 0, 0)), **T(16 - 4 * b, 3))
-    make("sleep", [(1, nap(0)), (36, nap(1)), (72, nap(0))])
+    make("sleep", [(1, nap(0)), (36, nap(1)), (72, nap(0))], cyclic=True)
     reset()
     print("clips", [(t.name, t.strips[0].frame_end) for t in ad.nla_tracks], "top" if has_top else "")
 
