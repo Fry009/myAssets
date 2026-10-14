@@ -21,7 +21,10 @@ Salida del rig: `evoN_rig.glb` + `.blend` (`<pet>_rig.blend` para evo0, `<pet>_e
 | planta  | ✅ `lid` bajo por cejas | ✅ head, puños; `hand_exclude` rodilleras (+`hand_exclude_y`), `arm_amp` 0.75 | ✅ brazos de roca, `hand_z` | ✅ brazos de roca |
 | robot   | ✅ visor único, 9 caras | ✅ head, top=antena, 2 ojos + boca | ✅ 2 ojos sin boca (11 caras) | ✅ 2 ojos sin boca (11 caras) |
 
-Animaciones (todas): `idle`, `walk`, `wave`, `jump`. Huesos opcionales `head`/`top`/`tail` reciben el
+Animaciones (todas, 8): `idle`, `walk`, `wave`, `jump`, `attack` (golpe con L + giro de torso), `hurt` (retroceso),
+`celebrate` (dos saltitos con brazos arriba), `sleep` (72 f, cabeceo + respiración). El visor pone una cara por clip
+(`CLIP_FACES` en ModelViewer.jsx; vuelve a neutra al cambiar de clip si no la tocó el usuario). Acero evo0 usa las mismas
+animaciones vía `acero_reanim.py` (abre su .blend, llama a `animate()` del pipeline y reexporta). Huesos opcionales `head`/`top`/`tail` reciben el
 mismo movimiento secundario (cabeceo, lateral, meneo). Expresiones: blink(_L/_R), eyes_happy/wide/sad/angry,
 look_*, mouth_open/smile/sad/o (robot evo0 visor único sin boca → 9; robot2 sin boca → 11).
 Galería: tags + miniaturas (copia de la del evoN sin rig) añadidos para evo0..evo3; índice regenerado (81 archivos).
@@ -49,6 +52,8 @@ Repaso visual de las 24 en 3/4 (wave/jump): sin más defectos visibles.
 - Medir estiramiento (sesión 3, script suelto `faces.py`): ejecutar el pipeline sin exportar, poner jump fr 11 y
   sumar el área añadida de los triángulos que crecen >4x, agrupada en celdas xz de 1 cm con sus pesos medios →
   dice qué frontera de pesos se estira. Contar aristas >2x no sirve: estas mallas tienen muchas aristas diminutas.
+- Signos en `animate()`: `FWD=1` (body.X + = inclinarse hacia delante) y `PUNCH=-1` (hand.Z con ese signo = mano
+  hacia delante); body.Y = giro del torso (− adelanta el hombro L). Verificados con vista lateral (cámara en +X).
 - Diagnóstico de estiramientos (scripts sueltos de la sesión 3, no versionados): vista lateral con rejilla de media
   malla (borrar vértices con x·k < xmin, cámara ortho 0.40 desde ±X) para ver a qué profundidad y está el brazo frente
   a lo que hay detrás → `hand_ymax`. Con cámara en +X la derecha de la imagen es +Y (detrás); desde -X, al revés.
@@ -83,4 +88,8 @@ No hay enlace directo a un modelo: hay que buscar y pulsar la tarjeta. Receta us
    GLB con una sola escena. Copia previa en el scratchpad de la sesión 3.
 3. (hecho) Commit en la rama `pokecodes-rigs` con Git LFS (`*.glb`, `*.blend`, `*.fbx` en .gitattributes; 77 ficheros,
    ~1.9 GB). **Sin push**: GitHub da 1 GB gratis de LFS → subirlo requiere ampliar la cuota. Decidir antes de `git push`.
-4. (hecho) Pulido: Planta1 y Fuegito3 reajustados y reexportados. Pendiente solo el push (punto 3).
+4. (hecho) Pulido: Planta1 y Fuegito3 reajustados y reexportados.
+5. (hecho) 4 animaciones nuevas en las 24 + caras por clip en el visor; verificado en navegador.
+El usuario quiere trabajar **en local** por ahora (no push).
+Ideas siguientes: animar también las shape keys dentro de los clips del GLB (para que un motor de juego reciba la cara
+sin depender del visor), clips extra (p.ej. `faint`, `run`), y mejorar el parpadeo.

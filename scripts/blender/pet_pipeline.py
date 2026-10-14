@@ -512,6 +512,41 @@ def animate(pet, rig_ob, arm_amp=1.0):
         (21, dict(root=dict(loc=(0, 0, 0)), body=dict(scl=(1.1, 0.85, 1.1)), **T(14))),
         (26, dict()),
     ])
+    # FWD: signo de body.X que inclina hacia delante (-Y); PUNCH: signo de hand.Z que lleva la mano hacia delante
+    FWD, PUNCH = 1, -1
+    # lean: inclinación adelante (+) / atrás (-); side = lateral; twist = giro del torso (- adelanta el hombro L)
+    lean = lambda a, **kw: dict(rot=(FWD * a, kw.get("twist", 0), kw.get("side", 0)), **({"scl": kw["scl"]} if "scl" in kw else {}))
+    hands = lambda l, r=None: {"hand.L": dict(rot=l), "hand.R": dict(rot=r or l)}
+    make("attack", [
+        (1, dict()),
+        (7, dict(root=dict(loc=(0, 0.010, 0)), body=lean(-10, twist=12, scl=(1.04, 0.94, 1.04)),
+                 **hands((25, 0, -PUNCH * 35), (10, 0, PUNCH * 15)), **T(-6))),
+        (11, dict(root=dict(loc=(0, -0.022, 0)), body=lean(14, twist=-16, scl=(0.97, 1.04, 0.97)),
+                  **hands((45, 0, PUNCH * 55), (5, 0, -PUNCH * 20)), **T(10))),
+        (15, dict(root=dict(loc=(0, -0.020, 0)), body=lean(12, twist=-14), **hands((42, 0, PUNCH * 50), (5, 0, -PUNCH * 18)), **T(8))),
+        (24, dict()),
+    ])
+    make("hurt", [
+        (1, dict()),
+        (4, dict(root=dict(loc=(0, 0.020, 0)), body=lean(-14, scl=(1.05, 0.92, 1.05)), **hands((30, 0, 0)), **T(-12, 10))),
+        (8, dict(root=dict(loc=(0, 0.016, 0)), body=lean(-6, side=-5), **hands((15, 0, 0)), **T(-4, -8))),
+        (13, dict(root=dict(loc=(0, 0.008, 0)), body=lean(-2, side=3), **T(0, 4))),
+        (20, dict()),
+    ])
+    hop = lambda z, a, h, s=1.0: dict(root=dict(loc=(0, 0, z)), body=dict(scl=(1 / s ** 0.5, s, 1 / s ** 0.5)),
+                                      **hands((a, 0, 0)), **T(h, 0))
+    make("celebrate", [
+        (1, dict()),
+        (5, hop(0, -10, 8, 0.88)),
+        (10, dict(hop(0.04, 62, -10, 1.08), **{"foot.L": dict(rot=(-15, 0, 0)), "foot.R": dict(rot=(-15, 0, 0))})),
+        (15, hop(0, 50, 6, 0.9)),
+        (20, dict(hop(0.04, 65, -10, 1.08), **{"foot.L": dict(rot=(-15, 0, 0)), "foot.R": dict(rot=(-15, 0, 0))})),
+        (25, hop(0, 50, 6, 0.9)),
+        (30, dict(body=dict(rot=(0, 0, 8)), **hands((58, 0, 0)), **T(-4, 10))),
+        (36, dict()),
+    ])
+    nap = lambda b: dict(body=lean(7, scl=(1 + 0.03 * b, 1 - 0.03 * b, 1 + 0.03 * b)), **hands((-8 + 3 * b, 0, 0)), **T(16 - 4 * b, 3))
+    make("sleep", [(1, nap(0)), (36, nap(1)), (72, nap(0))])
     reset()
     print("clips", [(t.name, t.strips[0].frame_end) for t in ad.nla_tracks], "top" if has_top else "")
 

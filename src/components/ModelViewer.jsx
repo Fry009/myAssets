@@ -1,9 +1,26 @@
-import { lazy, Suspense, useCallback, useEffect, useState } from 'react'
+import { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react'
 import { Eye, Loader2, Play, RotateCcw, Smile, Square } from 'lucide-react'
 
 const Scene = lazy(() => import('./three/ModelScene.jsx'))
 
-const CLIP_LABELS = { idle: 'Reposo', walk: 'Andar', wave: 'Saludar', jump: 'Saltar' }
+const CLIP_LABELS = {
+  idle: 'Reposo',
+  walk: 'Andar',
+  wave: 'Saludar',
+  jump: 'Saltar',
+  attack: 'Atacar',
+  hurt: 'Daño',
+  celebrate: 'Celebrar',
+  sleep: 'Dormir',
+}
+
+// Cara que acompaña a cada clip (se filtra a las shape keys que tenga el modelo)
+const CLIP_FACES = {
+  attack: { eyes_angry: 1, mouth_open: 0.5 },
+  hurt: { eyes_sad: 0.6, blink: 0.5, mouth_o: 0.8 },
+  celebrate: { eyes_happy: 1, mouth_smile: 1 },
+  sleep: { blink: 1, mouth_open: 0.15 },
+}
 
 // Presets de cara: solo aparecen si el modelo tiene esas shape keys
 const PRESETS = [
@@ -112,19 +129,39 @@ function RigPanel({ rig, clip, setClip, morphs, setMorphs, autoBlink, setAutoBli
 
 export function ModelViewer({ src, ext }) {
   const [rig, setRig] = useState(null)
-  const [clip, setClip] = useState(null)
+  const [clip, setClipState] = useState(null)
   const [morphs, setMorphs] = useState({})
+  const clipFace = useRef(null)
+
+  // Al cambiar de clip se pone su cara; si la cara actual venía de otro clip, se vuelve a neutra
+  const setClip = useCallback(
+    (c) => {
+      setClipState(c)
+      const face = CLIP_FACES[c]
+      if (face && rig) {
+        const f = Object.fromEntries(Object.entries(face).filter(([m]) => rig.morphs.includes(m)))
+        clipFace.current = f
+        setMorphs(f)
+      } else if (clipFace.current) {
+        const prev = clipFace.current
+        clipFace.current = null
+        setMorphs((m) => (m === prev ? {} : m))
+      }
+    },
+    [rig],
+  )
   const [autoBlink, setAutoBlink] = useState(true)
 
   useEffect(() => {
     setRig(null)
-    setClip(null)
+    setClipState(null)
     setMorphs({})
+    clipFace.current = null
   }, [src])
 
   const onRig = useCallback((r) => {
     setRig(r)
-    setClip((c) => c ?? (r.clips.includes('idle') ? 'idle' : null))
+    setClipState((c) => c ?? (r.clips.includes('idle') ? 'idle' : null))
   }, [])
 
   const hasRig = rig && (rig.clips.length > 0 || rig.morphs.length > 0)
