@@ -1,0 +1,962 @@
+{
+  "title": "MyAsset Vault",
+  "subtitle": "Blender 3D · Imágenes · Fondos · Tiles · Música",
+  "assets": {
+    "/blender-3d/sample-tetrahedron.glb": {
+      "title": "Tetraedro de prueba",
+      "desc": "Modelo 3D de ejemplo para probar el visor GLB. Borra el fichero cuando quieras.",
+      "tags": [
+        "3d",
+        "sample",
+        "geometry",
+        "prueba"
+      ]
+    },
+    "/images/sample-flowers.png": {
+      "title": "Campo de flores — imagen",
+      "desc": "Imagen de ejemplo con degradado y flores sintéticas.",
+      "tags": [
+        "sample",
+        "naturaleza",
+        "flores",
+        "degradado"
+      ]
+    },
+    "/backgrounds/sample-aurora.png": {
+      "title": "Aurora — fondo",
+      "desc": "Fondo de ejemplo estilo aurora, listo para usar como wallpaper.",
+      "tags": [
+        "fondo",
+        "sample",
+        "aurora",
+        "wallpaper"
+      ]
+    },
+    "/tiles/sample-tile.png": {
+      "title": "Tile checker 3D",
+      "desc": "Tile de prueba con efecto checker que parece estar en 3D.",
+      "tags": [
+        "tile",
+        "sample",
+        "pattern",
+        "seamless"
+      ]
+    },
+    "/music/sample-chord.wav": {
+      "title": "Acorde arpegiado",
+      "desc": "Bucle de acorde suave para probar el reproductor de audio.",
+      "tags": [
+        "sample",
+        "musica",
+        "loop",
+        "chill"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/acero/evo0.glb": {
+      "title": "Acero — evolución 0",
+      "desc": "Mascota Acero de PokeCodes, fase de evolución 0.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "acero",
+        "evo0"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/acero/evo1.glb": {
+      "title": "Acero — evolución 1",
+      "desc": "Mascota Acero de PokeCodes, fase de evolución 1.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "acero",
+        "evo1"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/acero/evo2.glb": {
+      "title": "Acero — evolución 2",
+      "desc": "Mascota Acero de PokeCodes, fase de evolución 2.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "acero",
+        "evo2"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/acero/evo3.glb": {
+      "title": "Acero — evolución 3",
+      "desc": "Mascota Acero de PokeCodes, fase de evolución 3.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "acero",
+        "evo3"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fresa/evo0.glb": {
+      "title": "Fresa — evolución 0",
+      "desc": "Mascota Fresa de PokeCodes, fase de evolución 0.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fresa",
+        "evo0"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fresa/evo1.glb": {
+      "title": "Fresa — evolución 1",
+      "desc": "Mascota Fresa de PokeCodes, fase de evolución 1.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fresa",
+        "evo1"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fresa/evo2.glb": {
+      "title": "Fresa — evolución 2",
+      "desc": "Mascota Fresa de PokeCodes, fase de evolución 2.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fresa",
+        "evo2"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fresa/evo3.glb": {
+      "title": "Fresa — evolución 3",
+      "desc": "Mascota Fresa de PokeCodes, fase de evolución 3.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fresa",
+        "evo3"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fuegito/evo0.glb": {
+      "title": "Fuegito — evolución 0",
+      "desc": "Mascota Fuegito de PokeCodes, fase de evolución 0.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fuegito",
+        "evo0"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fuegito/evo1.glb": {
+      "title": "Fuegito — evolución 1",
+      "desc": "Mascota Fuegito de PokeCodes, fase de evolución 1.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fuegito",
+        "evo1"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fuegito/evo2.glb": {
+      "title": "Fuegito — evolución 2",
+      "desc": "Mascota Fuegito de PokeCodes, fase de evolución 2.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fuegito",
+        "evo2"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fuegito/evo3.glb": {
+      "title": "Fuegito — evolución 3",
+      "desc": "Mascota Fuegito de PokeCodes, fase de evolución 3.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fuegito",
+        "evo3"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/hielo/evo0.glb": {
+      "title": "Hielo — evolución 0",
+      "desc": "Mascota Hielo de PokeCodes, fase de evolución 0.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "hielo",
+        "evo0"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/hielo/evo1.glb": {
+      "title": "Hielo — evolución 1",
+      "desc": "Mascota Hielo de PokeCodes, fase de evolución 1.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "hielo",
+        "evo1"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/hielo/evo2.glb": {
+      "title": "Hielo — evolución 2",
+      "desc": "Mascota Hielo de PokeCodes, fase de evolución 2.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "hielo",
+        "evo2"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/hielo/evo3.glb": {
+      "title": "Hielo — evolución 3",
+      "desc": "Mascota Hielo de PokeCodes, fase de evolución 3.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "hielo",
+        "evo3"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/planta/evo0.glb": {
+      "title": "Planta — evolución 0",
+      "desc": "Mascota Planta de PokeCodes, fase de evolución 0.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "planta",
+        "evo0"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/planta/evo1.glb": {
+      "title": "Planta — evolución 1",
+      "desc": "Mascota Planta de PokeCodes, fase de evolución 1.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "planta",
+        "evo1"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/planta/evo2.glb": {
+      "title": "Planta — evolución 2",
+      "desc": "Mascota Planta de PokeCodes, fase de evolución 2.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "planta",
+        "evo2"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/planta/evo3.glb": {
+      "title": "Planta — evolución 3",
+      "desc": "Mascota Planta de PokeCodes, fase de evolución 3.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "planta",
+        "evo3"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/robot/evo0.glb": {
+      "title": "Robot — evolución 0",
+      "desc": "Mascota Robot de PokeCodes, fase de evolución 0.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "robot",
+        "evo0"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/robot/evo1.glb": {
+      "title": "Robot — evolución 1",
+      "desc": "Mascota Robot de PokeCodes, fase de evolución 1.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "robot",
+        "evo1"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/robot/evo2.glb": {
+      "title": "Robot — evolución 2",
+      "desc": "Mascota Robot de PokeCodes, fase de evolución 2.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "robot",
+        "evo2"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/robot/evo3.glb": {
+      "title": "Robot — evolución 3",
+      "desc": "Mascota Robot de PokeCodes, fase de evolución 3.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "robot",
+        "evo3"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/elemental-evolutions.glb": {
+      "title": "Evoluciones elementales (v2)",
+      "desc": "Todas las mascotas elementales de PokeCodes y sus evoluciones en un solo GLB.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "evoluciones",
+        "v2"
+      ]
+    },
+    "/blender-3d/pokecodes/CubeCritterEvolutions.glb": {
+      "title": "Cube Critter — evoluciones",
+      "desc": "Cube critters de PokeCodes exportados desde Meshy.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "cube-critter",
+        "meshy"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/cube-critters.blend": {
+      "title": "Cube Critters (.blend)",
+      "desc": "Fichero fuente de Blender de los cube critters de PokeCodes.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "cube-critter"
+      ]
+    },
+    "/blender-3d/pokecodes/pokeblocks.blend": {
+      "title": "PokeBlocks (.blend)",
+      "desc": "Escena fuente de Blender de los PokeBlocks.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "pokeblocks"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/acero/evo0_rig.glb": {
+      "title": "Acero — evolución 0 (rig)",
+      "desc": "Acero con esqueleto (root, body, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "acero",
+        "evo0",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/acero/acero_rig.blend": {
+      "title": "Acero rig (.blend)",
+      "desc": "Fuente de Blender del rig de Acero: armature, pesos, shape keys y acciones NLA.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "acero",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fresa/evo0_rig.glb": {
+      "title": "Fresa — evolución 0 (rig)",
+      "desc": "Fresa con esqueleto (root, body, hand.L/R, foot.L/R, top (hojas)), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fresa",
+        "evo0",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fresa/fresa_rig.blend": {
+      "title": "Fresa rig (.blend)",
+      "desc": "Fuente de Blender del rig de Fresa: armature, pesos, shape keys y acciones NLA. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "fresa",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fuegito/evo0_rig.glb": {
+      "title": "Fuegito — evolución 0 (rig)",
+      "desc": "Fuegito con esqueleto (root, body, hand.L/R, foot.L/R, top (llamas)), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fuegito",
+        "evo0",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fuegito/fuegito_rig.blend": {
+      "title": "Fuegito rig (.blend)",
+      "desc": "Fuente de Blender del rig de Fuegito: armature, pesos, shape keys y acciones NLA. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "fuegito",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/hielo/evo0_rig.glb": {
+      "title": "Hielo — evolución 0 (rig)",
+      "desc": "Hielo con esqueleto (root, body, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "hielo",
+        "evo0",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/hielo/hielo_rig.blend": {
+      "title": "Hielo rig (.blend)",
+      "desc": "Fuente de Blender del rig de Hielo: armature, pesos, shape keys y acciones NLA. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "hielo",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/planta/evo0_rig.glb": {
+      "title": "Planta — evolución 0 (rig)",
+      "desc": "Planta con esqueleto (root, body, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "planta",
+        "evo0",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/planta/planta_rig.blend": {
+      "title": "Planta rig (.blend)",
+      "desc": "Fuente de Blender del rig de Planta: armature, pesos, shape keys y acciones NLA. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "planta",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/robot/evo0_rig.glb": {
+      "title": "Robot — evolución 0 (rig)",
+      "desc": "Robot con esqueleto (root, body, hand.L/R, foot.L/R, top (antena)), animaciones idle/walk/wave/jump y 9 expresiones del visor (sin boca) como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "robot",
+        "evo0",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/robot/robot_rig.blend": {
+      "title": "Robot rig (.blend)",
+      "desc": "Fuente de Blender del rig de Robot: armature, pesos, shape keys y acciones NLA. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "robot",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/acero/evo1_rig.glb": {
+      "title": "Acero — evolución 1 (rig)",
+      "desc": "Acero evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "acero",
+        "evo1",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/acero/acero_evo1_rig.blend": {
+      "title": "Acero evo1 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Acero evo1. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "acero",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fresa/evo1_rig.glb": {
+      "title": "Fresa — evolución 1 (rig)",
+      "desc": "Fresa evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fresa",
+        "evo1",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fresa/fresa_evo1_rig.blend": {
+      "title": "Fresa evo1 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Fresa evo1. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "fresa",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fuegito/evo1_rig.glb": {
+      "title": "Fuegito — evolución 1 (rig)",
+      "desc": "Fuegito evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail (cola de llamas)), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fuegito",
+        "evo1",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fuegito/fuegito_evo1_rig.blend": {
+      "title": "Fuegito evo1 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Fuegito evo1. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "fuegito",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/hielo/evo1_rig.glb": {
+      "title": "Hielo — evolución 1 (rig)",
+      "desc": "Hielo evo1 con esqueleto (root, body, head, foot.L/R, tail (cola de cristal)), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "hielo",
+        "evo1",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/hielo/hielo_evo1_rig.blend": {
+      "title": "Hielo evo1 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Hielo evo1. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "hielo",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/planta/evo1_rig.glb": {
+      "title": "Planta — evolución 1 (rig)",
+      "desc": "Planta evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "planta",
+        "evo1",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/planta/planta_evo1_rig.blend": {
+      "title": "Planta evo1 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Planta evo1. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "planta",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/robot/evo1_rig.glb": {
+      "title": "Robot — evolución 1 (rig)",
+      "desc": "Robot evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R, top (antena)), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "robot",
+        "evo1",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/robot/robot_evo1_rig.blend": {
+      "title": "Robot evo1 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Robot evo1. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "robot",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/acero/evo2_rig.glb": {
+      "title": "Acero — evolución 2 (rig)",
+      "desc": "Acero evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "acero",
+        "evo2",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/acero/acero_evo2_rig.blend": {
+      "title": "Acero evo2 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Acero evo2. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "acero",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fresa/evo2_rig.glb": {
+      "title": "Fresa — evolución 2 (rig)",
+      "desc": "Fresa evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail (cola)), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fresa",
+        "evo2",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fresa/fresa_evo2_rig.blend": {
+      "title": "Fresa evo2 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Fresa evo2. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "fresa",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fuegito/evo2_rig.glb": {
+      "title": "Fuegito — evolución 2 (rig)",
+      "desc": "Fuegito evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail (cola de llamas)), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fuegito",
+        "evo2",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fuegito/fuegito_evo2_rig.blend": {
+      "title": "Fuegito evo2 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Fuegito evo2. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "fuegito",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/hielo/evo2_rig.glb": {
+      "title": "Hielo — evolución 2 (rig)",
+      "desc": "Hielo evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "hielo",
+        "evo2",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/hielo/hielo_evo2_rig.blend": {
+      "title": "Hielo evo2 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Hielo evo2. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "hielo",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/planta/evo2_rig.glb": {
+      "title": "Planta — evolución 2 (rig)",
+      "desc": "Planta evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "planta",
+        "evo2",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/planta/planta_evo2_rig.blend": {
+      "title": "Planta evo2 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Planta evo2. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "planta",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/robot/evo2_rig.glb": {
+      "title": "Robot — evolución 2 (rig)",
+      "desc": "Robot evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 11 expresiones (dos ojos, sin boca) como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "robot",
+        "evo2",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/robot/robot_evo2_rig.blend": {
+      "title": "Robot evo2 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Robot evo2. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "robot",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/acero/evo3_rig.glb": {
+      "title": "Acero — evolución 3 (rig)",
+      "desc": "Acero evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "acero",
+        "evo3",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/acero/acero_evo3_rig.blend": {
+      "title": "Acero evo3 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Acero evo3. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "acero",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fresa/evo3_rig.glb": {
+      "title": "Fresa — evolución 3 (rig)",
+      "desc": "Fresa evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail (cola)), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fresa",
+        "evo3",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fresa/fresa_evo3_rig.blend": {
+      "title": "Fresa evo3 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Fresa evo3. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "fresa",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fuegito/evo3_rig.glb": {
+      "title": "Fuegito — evolución 3 (rig)",
+      "desc": "Fuegito evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail (cola de llamas)), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "fuegito",
+        "evo3",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/fuegito/fuegito_evo3_rig.blend": {
+      "title": "Fuegito evo3 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Fuegito evo3. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "fuegito",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/hielo/evo3_rig.glb": {
+      "title": "Hielo — evolución 3 (rig)",
+      "desc": "Hielo evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail (cola de cristal)), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "hielo",
+        "evo3",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/hielo/hielo_evo3_rig.blend": {
+      "title": "Hielo evo3 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Hielo evo3. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "hielo",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/planta/evo3_rig.glb": {
+      "title": "Planta — evolución 3 (rig)",
+      "desc": "Planta evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 15 expresiones como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "planta",
+        "evo3",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/planta/planta_evo3_rig.blend": {
+      "title": "Planta evo3 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Planta evo3. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "planta",
+        "rig"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/robot/evo3_rig.glb": {
+      "title": "Robot — evolución 3 (rig)",
+      "desc": "Robot evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/wave/jump y 11 expresiones (dos ojos, sin boca) como morph targets.",
+      "tags": [
+        "pokecodes",
+        "mascota",
+        "3d",
+        "robot",
+        "evo3",
+        "rig",
+        "animado",
+        "expresiones"
+      ]
+    },
+    "/blender-3d/pokecodes/pets/robot/robot_evo3_rig.blend": {
+      "title": "Robot evo3 rig (.blend)",
+      "desc": "Fuente de Blender del rig de Robot evo3. Generado con scripts/blender/pet_pipeline.py.",
+      "tags": [
+        "pokecodes",
+        "blender",
+        "fuente",
+        "robot",
+        "rig"
+      ]
+    }
+  }
+}
