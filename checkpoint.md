@@ -77,6 +77,6 @@ No hay enlace directo a un modelo: hay que buscar y pulsar la tarjeta. Receta us
    Presets de cara: en modelos sin boca (robots evo0/2/3) se quedan con la parte de ojos (Feliz/Sorpresa/Triste/Enfadado).
 2. (hecho) Acero evo0 reexportado desde `acero_rig.blend` con `acero_export.py` (ahora con `use_active_scene=True`):
    GLB con una sola escena. Copia previa en el scratchpad de la sesión 3.
-3. **Commit pendiente**: 170 ficheros / 1.9 GB sin versionar (GLB/.blend de 20–40 MB), remoto GitHub. Decidir con el
-   usuario: Git LFS, ignorar binarios grandes o subirlos tal cual.
+3. (hecho) Commit en la rama `pokecodes-rigs` con Git LFS (`*.glb`, `*.blend`, `*.fbx` en .gitattributes; 77 ficheros,
+   ~1.9 GB). **Sin push**: GitHub da 1 GB gratis de LFS → subirlo requiere ampliar la cuota. Decidir antes de `git push`.
 4. (Opcional) pulir Fuegito3 (tira gris) y revisar de cerca Fresa3 (mano R pequeña).
