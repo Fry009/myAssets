@@ -16,9 +16,9 @@ Salida del rig: `evoN_rig.glb` + `.blend` (`<pet>_rig.blend` para evo0, `<pet>_e
 |---|---|---|---|---|
 | acero   | ✅ (scripts `acero_*.py`; reexportado con `use_active_scene`, ya sin "CrestHalo") | ✅ head, manos-puño | ✅ garras grandes | ✅ brazos-escudo (2 elipses/mano), `arm_amp` 0.6 |
 | fresa   | ✅ top=hojas | ✅ head, alas de hojas como manos | ✅ zorro, tail, cara girada a +X | ✅ tail (2 elipses) |
-| fuegito | ✅ top=llamas | ✅ head, tail (cola de llamas) | ✅ head, tail | ✅ tail; `hand_ymax` (llama gris tras el puño L) |
+| fuegito | ✅ top=llamas | ✅ head, tail (cola de llamas) | ✅ head, tail | ✅ tail; `hand_ymax`, `arm_amp` 0.75 |
 | hielo   | ✅ | ✅ head, tail; **sin manos** (sentado) | ✅ brazos de cristal, `hand_z` | ✅ brazos ajustados + `hand_ymax` (cristales de la espalda), tail |
-| planta  | ✅ `lid` bajo por cejas | ✅ head, puños; `hand_exclude` rodilleras de musgo | ✅ brazos de roca, `hand_z` | ✅ brazos de roca |
+| planta  | ✅ `lid` bajo por cejas | ✅ head, puños; `hand_exclude` rodilleras (+`hand_exclude_y`), `arm_amp` 0.75 | ✅ brazos de roca, `hand_z` | ✅ brazos de roca |
 | robot   | ✅ visor único, 9 caras | ✅ head, top=antena, 2 ojos + boca | ✅ 2 ojos sin boca (11 caras) | ✅ 2 ojos sin boca (11 caras) |
 
 Animaciones (todas): `idle`, `walk`, `wave`, `jump`. Huesos opcionales `head`/`top`/`tail` reciben el
@@ -27,9 +27,10 @@ look_*, mouth_open/smile/sad/o (robot evo0 visor único sin boca → 9; robot2 s
 Galería: tags + miniaturas (copia de la del evoN sin rig) añadidos para evo0..evo3; índice regenerado (81 archivos).
 Todos los evo3 llevan `smooth=12` (difuminado de pesos).
 
-Defectos conocidos aceptados: el parpadeo estira un poco la textura de encima del ojo; en Planta1 al
-saltar (brazos a 55°) hay un leve estiramiento bajo los puños; en Fuegito3 queda una tira gris pequeña bajo
-el puño L al saludar/saltar.
+Defectos conocidos aceptados: el parpadeo estira un poco la textura de encima del ojo (límite de ojos pintados
+en textura). Lo gris que asoma en Planta1 (cara inferior del puño sin pintar) y Fuegito3 (pieza gris del propio
+modelo tras el brazo L) al levantar los brazos no es deformación; el estiramiento real se redujo ~45% (sesión 3).
+Repaso visual de las 24 en 3/4 (wave/jump): sin más defectos visibles.
 
 ## Pipeline (scripts/blender/)
 - `pet_pipeline.py` — genérico. `CONFIG["<pet>"]` = evo0, `CONFIG["<pet>N"]` = evoN. Regiones de peso con
@@ -45,6 +46,9 @@ el puño L al saludar/saltar.
   cara neutra/parpadeo, rejilla 1 cm, 5000 px/u) para afinar ojos. Ambos con `blender -b --factory-startup --python`.
 - `blender-mcp.mjs` — cliente del addon blender_mcp (puerto 9876). Solo para inspección; exportar en background.
 - `acero_rig.py / acero_anim.py / acero_export.py` — versión original solo para Acero evo0.
+- Medir estiramiento (sesión 3, script suelto `faces.py`): ejecutar el pipeline sin exportar, poner jump fr 11 y
+  sumar el área añadida de los triángulos que crecen >4x, agrupada en celdas xz de 1 cm con sus pesos medios →
+  dice qué frontera de pesos se estira. Contar aristas >2x no sirve: estas mallas tienen muchas aristas diminutas.
 - Diagnóstico de estiramientos (scripts sueltos de la sesión 3, no versionados): vista lateral con rejilla de media
   malla (borrar vértices con x·k < xmin, cámara ortho 0.40 desde ±X) para ver a qué profundidad y está el brazo frente
   a lo que hay detrás → `hand_ymax`. Con cámara en +X la derecha de la imagen es +Y (detrás); desde -X, al revés.
@@ -79,4 +83,4 @@ No hay enlace directo a un modelo: hay que buscar y pulsar la tarjeta. Receta us
    GLB con una sola escena. Copia previa en el scratchpad de la sesión 3.
 3. (hecho) Commit en la rama `pokecodes-rigs` con Git LFS (`*.glb`, `*.blend`, `*.fbx` en .gitattributes; 77 ficheros,
    ~1.9 GB). **Sin push**: GitHub da 1 GB gratis de LFS → subirlo requiere ampliar la cuota. Decidir antes de `git push`.
-4. (Opcional) pulir Fuegito3 (tira gris) y revisar de cerca Fresa3 (mano R pequeña).
+4. (hecho) Pulido: Planta1 y Fuegito3 reajustados y reexportados. Pendiente solo el push (punto 3).

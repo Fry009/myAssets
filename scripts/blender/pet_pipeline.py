@@ -18,6 +18,7 @@ BASE = r"C:\Users\Fran\Desktop\Fran\myAssets\public\assets\blender-3d\pokecodes\
 # hand_ymax: (a,b) profundidad máxima de las manos (lo de detrás, p.ej. cristales de la espalda, es cuerpo)
 # hand_z: (a,b) techo de las manos (lo de encima es cabeza/cuerpo)
 # hand_exclude: elipses que nunca van a las manos (p.ej. rodilleras que se solapan con el puño en proyección)
+# hand_exclude_y: (a,b) la exclusión solo actúa detrás (y>b); lo de delante (el puño) sigue siendo mano
 # eyes: {L/R/C: (x,z)}, eye_r: (ERX,ERZ); mouth: (x,z,MRX,MRZ) o None
 # front: (a,b) y -> 1 en y<a, 0 en y>b ; top: (a,b) z para bone "top" (hojas/llamas/antena) o None
 # head: (a,b) z del cuello -> bone "head" (bípedos); shoulder: {L/R: (x,z)} pivote del brazo;
@@ -89,7 +90,7 @@ CONFIG = {
         hands={"L": (0.101, 0.101, 0.043, 0.059), "R": (-0.103, 0.101, 0.043, 0.059)}, hand_in={"L": 0.060, "R": -0.060},
         shoulder={"L": (0.060, 0.130), "R": (-0.060, 0.130)},
         feet=dict(z=(0.062, 0.076), split=0.0, gap=(0.006, 0.016), xout=(0.068, 0.078), first=True),
-        hand_exclude=[(0.078, 0.066, 0.020, 0.014), (-0.078, 0.066, 0.020, 0.014)],
+        hand_exclude=[(0.078, 0.066, 0.020, 0.014), (-0.078, 0.066, 0.020, 0.014)], hand_exclude_y=(0.016, 0.024), arm_amp=0.75,
         eyes={"L": (0.032, 0.162), "R": (-0.042, 0.162)}, eye_r=(0.021, 0.024),
         mouth=(-0.003, 0.143, 0.012, 0.011), front="auto", lid=1.18),
     "robot1": dict(
@@ -172,8 +173,8 @@ CONFIG = {
         head=(0.188, 0.200),
         tail=dict(ell=[(-0.110, 0.200, 0.050, 0.110), (-0.100, 0.080, 0.045, 0.060)], ymin=(0.005, 0.015),
                   pivot=(-0.040, 0.110), tip=(-0.110, 0.180)),
-        hands={"L": (0.120, 0.120, 0.035, 0.050), "R": (-0.052, 0.118, 0.030, 0.050)}, hand_in={"L": 0.085, "R": -0.028},
-        hand_ymax={"L": (0.038, 0.046), "R": (0.040, 0.050)},
+        hands={"L": (0.120, 0.120, 0.035, 0.050), "R": (-0.052, 0.118, 0.030, 0.050)}, hand_in={"L": 0.085, "R": -0.034},
+        hand_ymax={"L": (0.042, 0.045), "R": (0.040, 0.050)}, arm_amp=0.75,
         shoulder={"L": (0.085, 0.160), "R": (-0.028, 0.160)},
         feet=dict(z=(0.070, 0.084), split=0.019, gap=(0.008, 0.018)),
         eyes={"L": (0.081, 0.236), "R": (0.019, 0.237)}, eye_r=(0.015, 0.016),
@@ -287,7 +288,10 @@ def rig(pet, sc, ob, C):
         hin = C["hand_in"]
         side = ss(0, 0.008, (x - hin[s]) * k) if isinstance(hin, dict) else ss(*hin, ax) * ((x * k) > 0)
         raw[f"hand.{s}"] = region(x, z, C["hands"][s]) * side
-        if C.get("hand_exclude"): raw[f"hand.{s}"] *= 1 - region(x, z, C["hand_exclude"])
+        if C.get("hand_exclude"):
+            ex = region(x, z, C["hand_exclude"])
+            if C.get("hand_exclude_y"): ex = ex * ss(*C["hand_exclude_y"], y)
+            raw[f"hand.{s}"] *= 1 - ex
         if C.get("hand_z"): raw[f"hand.{s}"] *= 1 - ss(*C["hand_z"], z)
         if C.get("hand_ymax"):
             hy = C["hand_ymax"][s] if isinstance(C["hand_ymax"], dict) else C["hand_ymax"]
