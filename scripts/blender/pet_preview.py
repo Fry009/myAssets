@@ -20,7 +20,7 @@ ad = rig.animation_data
 
 # color de pesos
 me = ob.data; n = len(me.vertices)
-cols = {"body": (0.8, 0.8, 0.8), "hand.L": (1, 0.1, 0.1), "hand.R": (1, 0.6, 0), "foot.L": (0.1, 0.3, 1), "foot.R": (0, 0.8, 1), "top": (0.1, 0.8, 0.1), "head": (0.75, 0.5, 1), "tail": (1, 0.3, 0.8)}
+cols = {"body": (0.8, 0.8, 0.8), "hand.L": (1, 0.1, 0.1), "hand.R": (1, 0.6, 0), "foot.L": (0.1, 0.3, 1), "foot.R": (0, 0.8, 1), "top": (0.1, 0.8, 0.1), "head": (0.75, 0.5, 1), "tail": (1, 0.3, 0.8), "tail2": (0.6, 0.2, 1), "tail3": (0.2, 0.9, 0.7)}
 acc = np.zeros((n, 3))
 for vg in ob.vertex_groups:
     w = np.zeros(n)

@@ -6,12 +6,14 @@ const Scene = lazy(() => import('./three/ModelScene.jsx'))
 const CLIP_LABELS = {
   idle: 'Reposo',
   walk: 'Andar',
+  run: 'Correr',
   wave: 'Saludar',
   jump: 'Saltar',
   attack: 'Atacar',
   hurt: 'Daño',
   celebrate: 'Celebrar',
   sleep: 'Dormir',
+  faint: 'Desmayo',
 }
 
 // Cara que acompaña a cada clip (se filtra a las shape keys que tenga el modelo)
@@ -20,6 +22,7 @@ const CLIP_FACES = {
   hurt: { eyes_sad: 0.6, blink: 0.5, mouth_o: 0.8 },
   celebrate: { eyes_happy: 1, mouth_smile: 1 },
   sleep: { blink: 1, mouth_open: 0.15 },
+  faint: { blink: 1, eyes_sad: 0.5, mouth_o: 0.7 },
 }
 
 // Presets de cara: solo aparecen si el modelo tiene esas shape keys

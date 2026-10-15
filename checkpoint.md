@@ -21,7 +21,8 @@ Salida del rig: `evoN_rig.glb` + `.blend` (`<pet>_rig.blend` para evo0, `<pet>_e
 | planta  | ✅ `lid` bajo por cejas | ✅ head, puños; `hand_exclude` rodilleras (+`hand_exclude_y`), `arm_amp` 0.75 | ✅ brazos de roca, `hand_z` | ✅ brazos de roca |
 | robot   | ✅ visor único, 9 caras | ✅ head, top=antena, 2 ojos + boca | ✅ 2 ojos sin boca (11 caras) | ✅ 2 ojos sin boca (11 caras) |
 
-Animaciones (todas, 8): `idle`, `walk`, `wave`, `jump`, `attack` (golpe con L + giro de torso), `hurt` (retroceso),
+Animaciones (todas, 10): `faint` (tambaleo y caída de espaldas girando `root` sobre los pies; el visor lo
+reproduce una vez y se queda tumbado, `ONE_SHOT` en ModelScene.jsx), `idle`, `walk`, `run` (16 f, cíclico, fase en el aire), `wave`, `jump`, `attack` (golpe con L + giro de torso), `hurt` (retroceso),
 `celebrate` (dos saltitos con brazos arriba), `sleep` (72 f, cabeceo + respiración). El visor pone una cara por clip
 (`CLIP_FACES` en ModelViewer.jsx; vuelve a neutra al cambiar de clip si no la tocó el usuario). Acero evo0 usa las mismas
 animaciones vía `acero_reanim.py` (abre su .blend, llama a `animate()` del pipeline y reexporta). Huesos opcionales `head`/`top`/`tail` reciben el
@@ -93,6 +94,15 @@ No hay enlace directo a un modelo: hay que buscar y pulsar la tarjeta. Receta us
 6. (hecho) Movimiento mejorado: inercia (head 2 f, top 3 f, tail 4 f de retraso), bucles con modificador Cycles en
    idle (97 f, 2 respiraciones + cambio de peso), walk (pie que pasa levantado, giro de cadera, rebote) y sleep;
    los clips de una vez se alargan 4 f. Verificado: bucles cierran exactos, pies/manos opuestos (bonepos).
+7. (hecho) Clip `run`. Push: rama `pokecodes-rigs` subida hasta af39e59 (4.6 GB LFS; cuota GitHub Free = 10 GiB
+   almacenamiento + 10 GiB descarga/mes). Lo posterior está solo en local: subir por tandas validadas.
+8. (hecho) Cola en cadena de 3 huesos (`TAIL_N`): tramos repartidos entre el inicio real y el final de la cola
+   (percentiles 3–97 de t a lo largo de pivot→tip), articulaciones = centro de los vértices de cada corte, pesos
+   lineales entre vecinos; en la animación cada tramo gira 1/3 con retraso 3/5/7 f (onda). Solo afecta a los 7
+   modelos con cola (fuegito1, hielo1, fresa2, fuegito2, fresa3, fuegito3, hielo3), reexportados solo esos.
+9. (hecho) Inercia de brazos por clip (`make(..., lag={...})`): idle 3 f, walk 2 f, run 1 f.
+10. (hecho) `top="auto"` en fresa1-3, fuegito1-3, hielo1-3: puntas de orejas/llamas/hojas por encima del 55% entre
+   ojos y punta de cabeza, con retraso 3 f. No en acero/planta/robot2-3 (metal/roca).
 Las caras se quedan como están (decisión del usuario: todo 3D, robots sin boca tal cual).
 Ideas siguientes: animar también las shape keys dentro de los clips del GLB (para que un motor de juego reciba la cara
 sin depender del visor), clips extra (p.ej. `faint`, `run`), y mejorar el parpadeo.

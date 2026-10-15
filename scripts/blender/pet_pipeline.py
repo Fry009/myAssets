@@ -20,7 +20,8 @@ BASE = r"C:\Users\Fran\Desktop\Fran\myAssets\public\assets\blender-3d\pokecodes\
 # hand_exclude: elipses que nunca van a las manos (p.ej. rodilleras que se solapan con el puño en proyección)
 # hand_exclude_y: (a,b) la exclusión solo actúa detrás (y>b); lo de delante (el puño) sigue siendo mano
 # eyes: {L/R/C: (x,z)}, eye_r: (ERX,ERZ); mouth: (x,z,MRX,MRZ) o None
-# front: (a,b) y -> 1 en y<a, 0 en y>b ; top: (a,b) z para bone "top" (hojas/llamas/antena) o None
+# front: (a,b) y -> 1 en y<a, 0 en y>b ; top: (a,b) z para bone "top" (hojas/llamas/antena) o None;
+#   top="auto": lo que queda por encima del 55% entre los ojos y la punta de la cabeza (pelo, llamas, orejas)
 # head: (a,b) z del cuello -> bone "head" (bípedos); shoulder: {L/R: (x,z)} pivote del brazo;
 #   hand_in también puede ser {L: x, R: x} (borde interior con signo); hands admite lista de elipses
 # tail: dict(ell=elipse(s), ymin=(a,b) opcional (solo lo de detrás), pivot=(x,z), tip=(x,z))
@@ -70,7 +71,7 @@ CONFIG = {
         shoulder={"L": (0.055, 0.095), "R": (-0.055, 0.095)},
         feet=dict(z=(0.055, 0.070), split=0.0, gap=(0.004, 0.012), xout=(0.060, 0.068), first=True),
         eyes={"L": (0.036, 0.150), "R": (-0.035, 0.148)}, eye_r=(0.018, 0.022),
-        mouth=(-0.002, 0.130, 0.011, 0.010), front="auto", lid=1.15),
+        mouth=(-0.002, 0.130, 0.011, 0.010), front="auto", top="auto", lid=1.15),
     "fuegito1": dict(
         head=(0.100, 0.115),
         tail=dict(ell=(-0.080, 0.103, 0.053, 0.077), ymin=(-0.005, 0.008), pivot=(-0.025, 0.060), tip=(-0.070, 0.090)),
@@ -78,13 +79,13 @@ CONFIG = {
         shoulder={"L": (0.085, 0.100), "R": (-0.026, 0.100)},
         feet=dict(z=(0.062, 0.076), split=0.024, gap=(0.008, 0.018)),
         eyes={"L": (0.084, 0.1465), "R": (0.015, 0.147)}, eye_r=(0.019, 0.0215),
-        mouth=(0.049, 0.119, 0.008, 0.005), front="auto", lid=1.15),
+        mouth=(0.049, 0.119, 0.008, 0.005), front="auto", top="auto", lid=1.15),
     "hielo1": dict(
         head=(0.095, 0.110),
         tail=dict(ell=(-0.093, 0.052, 0.032, 0.043), ymin=(-0.005, 0.008), pivot=(-0.050, 0.040), tip=(-0.090, 0.060)),
         feet=dict(z=(0.045, 0.060), split=0.007, gap=(0.010, 0.020)),
         eyes={"L": (0.045, 0.150), "R": (-0.030, 0.150)}, eye_r=(0.019, 0.023),
-        mouth=(0.004, 0.127, 0.010, 0.010), front="auto"),
+        mouth=(0.004, 0.127, 0.010, 0.010), front="auto", top="auto"),
     "planta1": dict(
         head=(0.112, 0.126),
         hands={"L": (0.101, 0.101, 0.043, 0.059), "R": (-0.103, 0.101, 0.043, 0.059)}, hand_in={"L": 0.060, "R": -0.060},
@@ -116,7 +117,7 @@ CONFIG = {
         shoulder={"L": (0.050, 0.120), "R": (-0.024, 0.120)},
         feet=dict(z=(0.056, 0.070), split=0.013, gap=(0.006, 0.014), xout=(0.050, 0.058), first=True),
         eyes={"L": (0.0606, 0.179), "R": (-0.004, 0.181)}, eye_r=(0.016, 0.020),
-        mouth=(0.029, 0.152, 0.009, 0.005), front="auto", lid=1.15),
+        mouth=(0.029, 0.152, 0.009, 0.005), front="auto", top="auto", lid=1.15),
     "fuegito2": dict(
         head=(0.127, 0.140),
         tail=dict(ell=(-0.083, 0.100, 0.055, 0.080), ymin=(-0.005, 0.008), pivot=(-0.030, 0.070), tip=(-0.080, 0.110)),
@@ -124,14 +125,14 @@ CONFIG = {
         shoulder={"L": (0.090, 0.125), "R": (-0.030, 0.125)},
         feet=dict(z=(0.070, 0.084), split=0.024, gap=(0.008, 0.018)),
         eyes={"L": (0.078, 0.180), "R": (0.009, 0.182)}, eye_r=(0.021, 0.020),
-        mouth=(0.051, 0.150, 0.008, 0.004), front="auto", lid=1.15),
+        mouth=(0.051, 0.150, 0.008, 0.004), front="auto", top="auto", lid=1.15),
     "hielo2": dict(
         head=(0.132, 0.145),
         hands={"L": (0.099, 0.129, 0.080, 0.100), "R": (-0.099, 0.129, 0.080, 0.100)}, hand_in={"L": 0.045, "R": -0.045}, hand_z=(0.138, 0.150),
         shoulder={"L": (0.045, 0.130), "R": (-0.045, 0.130)},
         feet=dict(z=(0.060, 0.075), split=0.0, gap=(0.006, 0.016), xout=(0.080, 0.090), first=True),
         eyes={"L": (0.040, 0.190), "R": (-0.032, 0.190)}, eye_r=(0.019, 0.022),
-        mouth=(0.005, 0.164, 0.008, 0.006), front="auto", lid=1.15),
+        mouth=(0.005, 0.164, 0.008, 0.006), front="auto", top="auto", lid=1.15),
     "planta2": dict(
         head=(0.132, 0.145),
         hands={"L": (0.112, 0.113, 0.060, 0.085), "R": (-0.112, 0.113, 0.060, 0.085)}, hand_in={"L": 0.070, "R": -0.070}, hand_z=(0.172, 0.188),
@@ -167,7 +168,7 @@ CONFIG = {
         shoulder={"L": (0.055, 0.150), "R": (-0.022, 0.150)},
         feet=dict(z=(0.070, 0.084), split=0.016, gap=(0.008, 0.018)),
         eyes={"L": (0.055, 0.232), "R": (-0.001, 0.232)}, eye_r=(0.0155, 0.0155),
-        mouth=(0.024, 0.207, 0.012, 0.005), front="auto", lid=1.15),
+        mouth=(0.024, 0.207, 0.012, 0.005), front="auto", top="auto", lid=1.15),
     "fuegito3": dict(
         smooth=12,
         head=(0.188, 0.200),
@@ -178,7 +179,7 @@ CONFIG = {
         shoulder={"L": (0.085, 0.160), "R": (-0.028, 0.160)},
         feet=dict(z=(0.070, 0.084), split=0.019, gap=(0.008, 0.018)),
         eyes={"L": (0.081, 0.236), "R": (0.019, 0.237)}, eye_r=(0.015, 0.016),
-        mouth=(0.055, 0.211, 0.012, 0.005), front="auto", lid=1.15),
+        mouth=(0.055, 0.211, 0.012, 0.005), front="auto", top="auto", lid=1.15),
     "hielo3": dict(
         smooth=12,
         head=(0.186, 0.198),
@@ -188,7 +189,7 @@ CONFIG = {
         feet=dict(z=(0.075, 0.090), split=0.0, gap=(0.010, 0.022), xout=(0.092, 0.100), first=True),
         tail=dict(ell=(-0.112, 0.065, 0.035, 0.045), ymin=(0.010, 0.025), pivot=(-0.070, 0.070), tip=(-0.115, 0.050)),
         eyes={"L": (0.054, 0.240), "R": (-0.015, 0.241)}, eye_r=(0.0155, 0.017),
-        mouth=(0.022, 0.215, 0.012, 0.005), front="auto", lid=1.15),
+        mouth=(0.022, 0.215, 0.012, 0.005), front="auto", top="auto", lid=1.15),
     "planta3": dict(
         smooth=12,
         head=(0.170, 0.183),
@@ -209,6 +210,8 @@ CONFIG = {
         eyes={"L": (0.033, 0.246), "R": (-0.038, 0.246)}, eye_r=(0.011, 0.017),
         mouth=None, front="auto", lid=1.1),
 }
+
+TAIL_N = 3   # huesos de la cola
 
 def ss(a, b, v):
     t = np.clip((v - a) / (b - a), 0, 1); return t * t * (3 - 2 * t)
@@ -298,7 +301,10 @@ def rig(pet, sc, ob, C):
             raw[f"hand.{s}"] *= 1 - ss(*hy, y)
     if not F.get("first"):
         raw["foot.L"] = feet * (x > sp); raw["foot.R"] = feet * (x <= sp)
-    if C.get("top"): raw["top"] = ss(*C["top"], z)
+    top = C.get("top")
+    if top == "auto":
+        ez = float(np.mean([e[1] for e in C["eyes"].values()])); a = ez + 0.55 * (H - ez); top = (a, a + 0.012)
+    if top: raw["top"] = ss(*top, z)
     if C.get("head"): raw["head"] = ss(*C["head"], z)
     if C.get("head"):   # solo en bípedos (evo0 se dejó como estaba)
         graph = welded_graph(me, co)
@@ -322,6 +328,23 @@ def rig(pet, sc, ob, C):
 
     def centroid(w):
         m = w > 0.5; return co[m].mean(0) if m.any() else co[w > 0.01].mean(0)
+
+    chain = None
+    if T:   # cola en cadena de TAIL_N huesos: t = avance a lo largo de pivot->tip (plano xz)
+        wt = groups["tail"]; m = wt > 0.5
+        p0 = np.array(T["pivot"], float); u = np.array(T["tip"], float) - p0; u /= np.linalg.norm(u)
+        t = (co[:, [0, 2]] - p0) @ u
+        t0, tmax = (float(v) for v in np.percentile(t[m], [3, 97]))   # tramo real de la cola (puede empezar lejos del pivote)
+        sk = np.clip((t - t0) / (tmax - t0), 0, 1) * TAIL_N - 0.5        # coordenada de hueso; reparto lineal entre vecinos
+        names = ["tail"] + [f"tail{k + 1}" for k in range(1, TAIL_N)]
+        tail_w = {n: wt * np.clip(1 - np.abs(np.clip(sk, 0, TAIL_N - 1) - k), 0, 1) for k, n in enumerate(names)}
+        groups = {n: w for n, w in groups.items() if n != "tail"} | tail_w
+        yc = float(np.median(y[m])); chain = []
+        for k in range(TAIL_N + 1):   # articulaciones = centro de los vértices de la cola a esa altura de t
+            tb = t0 + (tmax - t0) * k / TAIL_N; near = m & (np.abs(t - tb) < (tmax - t0) / (2 * TAIL_N))
+            if k == 0 or not near.any(): pt = (p0[0] + u[0] * tb, yc, p0[1] + u[1] * tb)
+            else: c = co[near].mean(0); pt = (float(c[0]), yc, float(c[2]))
+            chain.append(pt)
 
     arm = bpy.data.armatures.new(f"{pet.capitalize()}_Armature"); arm.display_type = 'STICK'
     ao = bpy.data.objects.new(f"{pet.capitalize()}_Rig", arm); sc.collection.objects.link(ao); ao.show_in_front = True
@@ -355,10 +378,11 @@ def rig(pet, sc, ob, C):
             bone(f"foot.{s}", (c[0], c[1], ft), (c[0], c[1], 0.002), "root")
         if "top" in groups:
             c = centroid(groups["top"])
-            bone("top", (c[0], c[1], C["top"][0]), (c[0], c[1], C["top"][0] + 0.04), "head" if "head" in groups else "body")
-        if T:
-            c = centroid(groups["tail"])
-            bone("tail", (T["pivot"][0], c[1], T["pivot"][1]), (T["tip"][0], c[1], T["tip"][1]), "body")
+            bone("top", (c[0], c[1], top[0]), (c[0], c[1], top[0] + 0.04), "head" if "head" in groups else "body")
+        if chain:
+            parent = "body"
+            for k, n in enumerate(["tail"] + [f"tail{k + 1}" for k in range(1, TAIL_N)]):
+                bone(n, chain[k], chain[k + 1], parent); parent = n
         bpy.ops.object.mode_set(mode='OBJECT')
 
     for n, w in groups.items():
@@ -480,19 +504,20 @@ def animate(pet, rig_ob, arm_amp=1.0):
     # Inercia: head/top/tail llegan LAG fotogramas tarde (la cola más). En clips cíclicos todas las curvas llevan
     # modificador Cycles (el bucle no salta y el retraso "da la vuelta"); en los demás el clip se alarga para
     # que la cola termine su movimiento.
-    LAG = {"head": 2, "top": 3, "tail": 4}
+    LAG = {"head": 2, "top": 3, **{n: 3 + 2 * k for k, n in enumerate(["tail"] + [f"tail{k + 1}" for k in range(1, TAIL_N)])}}
     def fcurves(act):
         for layer in act.layers:
             for strip in layer.strips:
                 for cb in strip.channelbags: yield from cb.fcurves
-    def make(name, frames, cyclic=False):
+    def make(name, frames, cyclic=False, lag=None):   # lag: retrasos extra por hueso en este clip
+        lags = {**LAG, **(lag or {})}
         act = bpy.data.actions.new(f"{pet}_{name}"); act.use_fake_user = True
         ad.action = act
         for f, bones in frames: key(f, **bones)
         end = frames[-1][0]; tail_end = end
         for fc in fcurves(act):
             bone = fc.data_path.split('"')[1] if fc.data_path.startswith("pose.bones") else ""
-            lag = LAG.get(bone, 0)
+            lag = lags.get(bone, 0)
             if lag:
                 for kp in fc.keyframe_points:
                     kp.co.x += lag; kp.handle_left.x += lag; kp.handle_right.x += lag
@@ -502,14 +527,15 @@ def animate(pet, rig_ob, arm_amp=1.0):
         tr = ad.nla_tracks.new(); tr.name = name
         st = tr.strips.new(name, 1, act); st.action_frame_end = tail_end; tr.mute = True
     # top/head/tail siguen el mismo "ritmo" secundario: rx = cabeceo, rz = lateral (la cola lo amplifica)
+    tails = ["tail"] + [f"tail{k + 1}" for k in range(1, TAIL_N)]
     T = lambda rx, rz=0: {"top": dict(rot=(rx, 0, rz)), "head": dict(rot=(rx * 0.5, 0, rz * 0.6)),
-                          "tail": dict(rot=(rx * 1.2, 0, rz * 2.5))}
+                          **{n: dict(rot=(rx * 1.35 / TAIL_N, 0, rz * 2.7 / TAIL_N)) for n in tails}}
     def breath(f, inhale, sway):
         b = 0.03 * inhale
         return (f, dict(body=dict(scl=(1 + b, 1 - 1.3 * b, 1 + b), rot=(0, 0, sway)),
                         **{"hand.L": dict(rot=(5 - 8 * inhale, 0, 0)), "hand.R": dict(rot=(5 - 8 * inhale, 0, 0))},
                         **T(-6 * inhale, 4 - 3 * sway)))
-    make("idle", [breath(1, 0, 2), breath(25, 1, 0), breath(49, 0, -2), breath(73, 1, 0), breath(97, 0, 2)], cyclic=True)
+    make("idle", [breath(1, 0, 2), breath(25, 1, 0), breath(49, 0, -2), breath(73, 1, 0), breath(97, 0, 2)], cyclic=True, lag={"hand.L": 3, "hand.R": 3})
     def walk(phase):   # contacto: pies abiertos en el suelo, cuerpo en lo más bajo
         s = 1 if phase == 0 else -1
         return dict(body=dict(rot=(0, -5 * s, 6 * s), loc=(0, 0.0, 0), scl=(1.02, 0.97, 1.02)),
@@ -520,7 +546,7 @@ def animate(pet, rig_ob, arm_amp=1.0):
         lift = {("foot.L" if s > 0 else "foot.R"): dict(rot=(0, 0, 0), loc=(0, -0.014, 0))}
         return dict(body=dict(rot=(0, 0, 2 * s), loc=(0, 0.010, 0), scl=(0.99, 1.02, 0.99)),
                     **{"hand.L": dict(rot=(10, 0, 0)), "hand.R": dict(rot=(10, 0, 0))}, **lift, **T(-3, -2 * s))
-    make("walk", [(1, walk(0)), (7, passing(1)), (13, walk(1)), (19, passing(-1)), (25, walk(0))], cyclic=True)
+    make("walk", [(1, walk(0)), (7, passing(1)), (13, walk(1)), (19, passing(-1)), (25, walk(0))], cyclic=True, lag={"hand.L": 2, "hand.R": 2})
     wave_up = lambda a, t: dict(body=dict(rot=(0, 0, -6)), **{"hand.L": dict(rot=(a, 0, 0)), "hand.R": dict(rot=(5, 0, 0))}, **T(0, t))
     make("wave", [(1, dict()), (6, wave_up(55, -6)), (10, wave_up(35, 4)), (14, wave_up(58, -6)), (18, wave_up(35, 4)),
                   (22, wave_up(58, -6)), (26, wave_up(35, 4)), (32, dict())])
@@ -568,6 +594,34 @@ def animate(pet, rig_ob, arm_amp=1.0):
     ])
     nap = lambda b: dict(body=lean(7, scl=(1 + 0.03 * b, 1 - 0.03 * b, 1 + 0.03 * b)), **hands((-8 + 3 * b, 0, 0)), **T(16 - 4 * b, 3))
     make("sleep", [(1, nap(0)), (36, nap(1)), (72, nap(0))], cyclic=True)
+    # correr (16 f): inclinado, zancada larga, brazos doblados y fase en el aire en el paso
+    def stride(phase):
+        s = 1 if phase == 0 else -1
+        return dict(body=lean(10, twist=-8 * s, side=5 * s, scl=(1.04, 0.94, 1.04)),
+                    **{"foot.L": dict(rot=(38 * s, 0, 0)), "foot.R": dict(rot=(-38 * s, 0, 0)),
+                       "hand.L": dict(rot=(25, 0, -40 * s)), "hand.R": dict(rot=(25, 0, -40 * s))}, **T(8, -6 * s))
+    def flight(s):
+        return dict(root=dict(loc=(0, 0, 0.012)), body=lean(10, side=2 * s, scl=(0.98, 1.04, 0.98)),
+                    **{("foot.L" if s > 0 else "foot.R"): dict(rot=(-10 * s, 0, 0), loc=(0, -0.020, 0)),
+                       "hand.L": dict(rot=(25, 0, 0)), "hand.R": dict(rot=(25, 0, 0))}, **T(2, -2 * s))
+    make("run", [(1, stride(0)), (5, flight(1)), (9, stride(1)), (13, flight(-1)), (17, stride(0))], cyclic=True, lag={"hand.L": 1, "hand.R": 1})
+    # desmayo: tambaleo y caída de espaldas girando todo sobre los pies (root.X - = hacia atrás); el pivote sube
+    # BACK para que la espalda no atraviese el suelo. Termina tumbado (el visor lo reproduce una vez y se queda).
+    BACK = float(np.percentile([v.co.y for v in rig_ob.children[0].data.vertices], 98)) + 0.014 if rig_ob.children else 0.065
+    down = lambda a, z: dict(root=dict(rot=(a, 0, 0), loc=(0, 0, z)))
+    make("faint", [
+        (1, dict()),
+        (6, dict(body=lean(-8, side=6), **hands((20, 0, 0)), **T(-10, 10))),
+        (12, dict(body=lean(4, side=-8, scl=(1.03, 0.95, 1.03)), **hands((10, 0, 0)), **T(8, -12))),
+        (18, dict(body=lean(-2, side=6), **hands((25, 0, 0)), **T(-6, 10))),
+        (24, dict(down(-18, 0.016), body=lean(-6, scl=(1.05, 0.93, 1.05)), **hands((45, 0, 0)), **T(-14))),
+        (30, dict(down(-84, BACK), body=dict(scl=(1.06, 0.92, 1.06)), **hands((30, 0, 0)), **T(12, 8),
+                  **{"foot.L": dict(rot=(20, 0, 0)), "foot.R": dict(rot=(20, 0, 0))})),
+        (34, dict(down(-76, BACK + 0.006), **hands((40, 0, 0)), **T(4, 10),
+                  **{"foot.L": dict(rot=(30, 0, 0)), "foot.R": dict(rot=(25, 0, 0))})),
+        (38, dict(down(-82, BACK), **hands((-10, 0, 0)), **T(14, 16), **{"foot.L": dict(rot=(15, 0, 0)), "foot.R": dict(rot=(15, 0, 0))})),
+        (44, dict(down(-82, BACK), **hands((-12, 0, 0)), **T(16, 18), **{"foot.L": dict(rot=(15, 0, 0)), "foot.R": dict(rot=(15, 0, 0))})),
+    ])
     reset()
     print("clips", [(t.name, t.strips[0].frame_end) for t in ad.nla_tracks], "top" if has_top else "")
 

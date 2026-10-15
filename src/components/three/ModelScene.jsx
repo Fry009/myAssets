@@ -1,4 +1,5 @@
 import { Suspense, useEffect, useMemo, useRef } from 'react'
+import { LoopOnce, LoopRepeat } from 'three'
 import { Canvas, useFrame, useLoader } from '@react-three/fiber'
 import { Bounds, Grid, OrbitControls, useAnimations, useGLTF, useProgress } from '@react-three/drei'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js'
@@ -6,6 +7,8 @@ import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js'
 
 // Parpadeo: cada 2–5 s cierra los ojos ~0.16 s
 const BLINK_TIME = 0.16
+// Clips que se reproducen una vez y se quedan en el último fotograma
+const ONE_SHOT = new Set(['faint'])
 
 function GltfModel({ src, clip, morphs, autoBlink, onRig }) {
   const { scene, animations } = useGLTF(src)
@@ -27,6 +30,9 @@ function GltfModel({ src, clip, morphs, autoBlink, onRig }) {
   useEffect(() => {
     const action = clip && actions[clip]
     if (!action) return
+    const once = ONE_SHOT.has(clip)
+    action.setLoop(once ? LoopOnce : LoopRepeat, Infinity)
+    action.clampWhenFinished = once
     action.reset().fadeIn(0.25).play()
     return () => action.fadeOut(0.25)
   }, [clip, actions])
