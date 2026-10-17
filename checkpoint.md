@@ -96,7 +96,7 @@ No hay enlace directo a un modelo: hay que buscar y pulsar la tarjeta. Receta us
 6. (hecho) Movimiento mejorado: inercia (head 2 f, top 3 f, tail 4 f de retraso), bucles con modificador Cycles en
    idle (97 f, 2 respiraciones + cambio de peso), walk (pie que pasa levantado, giro de cadera, rebote) y sleep;
    los clips de una vez se alargan 4 f. Verificado: bucles cierran exactos, pies/manos opuestos (bonepos).
-7. (hecho) Clip `run`. Push: rama `pokecodes-rigs` subida hasta c28c170 (~5.9 GB LFS usados; cuota GitHub Free = 10 GiB
+7. (hecho) Clip `run`. Push: rama `pokecodes-rigs` subida hasta 8f84c27 (~7.2 GB LFS usados; cuota GitHub Free = 10 GiB
    almacenamiento + 10 GiB descarga/mes). Subir por tandas validadas y juntar antes los commits locales (`git reset --soft origin/pokecodes-rigs`) para
    no subir versiones intermedias de los GLB.
 8. (hecho) Cola en cadena de 3 huesos (`TAIL_N`): tramos repartidos entre el inicio real y el final de la cola
