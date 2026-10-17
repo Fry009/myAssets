@@ -360,7 +360,7 @@
     },
     "/blender-3d/pokecodes/pets/acero/evo0_rig.glb": {
       "title": "Acero — evolución 0 (rig)",
-      "desc": "Acero con esqueleto (root, body, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Acero con esqueleto (root, body, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -385,7 +385,7 @@
     },
     "/blender-3d/pokecodes/pets/fresa/evo0_rig.glb": {
       "title": "Fresa — evolución 0 (rig)",
-      "desc": "Fresa con esqueleto (root, body, hand.L/R, foot.L/R, top (hojas)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Fresa con esqueleto (root, body, hand.L/R, foot.L/R, top (hojas)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -410,7 +410,7 @@
     },
     "/blender-3d/pokecodes/pets/fuegito/evo0_rig.glb": {
       "title": "Fuegito — evolución 0 (rig)",
-      "desc": "Fuegito con esqueleto (root, body, hand.L/R, foot.L/R, top (llamas)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Fuegito con esqueleto (root, body, hand.L/R, foot.L/R, top (llamas)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -435,7 +435,7 @@
     },
     "/blender-3d/pokecodes/pets/hielo/evo0_rig.glb": {
       "title": "Hielo — evolución 0 (rig)",
-      "desc": "Hielo con esqueleto (root, body, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Hielo con esqueleto (root, body, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -460,7 +460,7 @@
     },
     "/blender-3d/pokecodes/pets/planta/evo0_rig.glb": {
       "title": "Planta — evolución 0 (rig)",
-      "desc": "Planta con esqueleto (root, body, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Planta con esqueleto (root, body, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -485,7 +485,7 @@
     },
     "/blender-3d/pokecodes/pets/robot/evo0_rig.glb": {
       "title": "Robot — evolución 0 (rig)",
-      "desc": "Robot con esqueleto (root, body, hand.L/R, foot.L/R, top (antena)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 9 expresiones del visor (sin boca) como morph targets.",
+      "desc": "Robot con esqueleto (root, body, hand.L/R, foot.L/R, top (antena)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 9 expresiones del visor (sin boca) como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -510,7 +510,7 @@
     },
     "/blender-3d/pokecodes/pets/acero/evo1_rig.glb": {
       "title": "Acero — evolución 1 (rig)",
-      "desc": "Acero evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Acero evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -535,7 +535,7 @@
     },
     "/blender-3d/pokecodes/pets/fresa/evo1_rig.glb": {
       "title": "Fresa — evolución 1 (rig)",
-      "desc": "Fresa evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Fresa evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -560,7 +560,7 @@
     },
     "/blender-3d/pokecodes/pets/fuegito/evo1_rig.glb": {
       "title": "Fuegito — evolución 1 (rig)",
-      "desc": "Fuegito evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail/tail2/tail3 (cola de llamas, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Fuegito evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail/tail2/tail3 (cola de llamas, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -585,7 +585,7 @@
     },
     "/blender-3d/pokecodes/pets/hielo/evo1_rig.glb": {
       "title": "Hielo — evolución 1 (rig)",
-      "desc": "Hielo evo1 con esqueleto (root, body, head, foot.L/R, tail/tail2/tail3 (cola de cristal, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Hielo evo1 con esqueleto (root, body, head, foot.L/R, tail/tail2/tail3 (cola de cristal, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -610,7 +610,7 @@
     },
     "/blender-3d/pokecodes/pets/planta/evo1_rig.glb": {
       "title": "Planta — evolución 1 (rig)",
-      "desc": "Planta evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Planta evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -635,7 +635,7 @@
     },
     "/blender-3d/pokecodes/pets/robot/evo1_rig.glb": {
       "title": "Robot — evolución 1 (rig)",
-      "desc": "Robot evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R, top (antena)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Robot evo1 con esqueleto (root, body, head, hand.L/R, foot.L/R, top (antena)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -660,7 +660,7 @@
     },
     "/blender-3d/pokecodes/pets/acero/evo2_rig.glb": {
       "title": "Acero — evolución 2 (rig)",
-      "desc": "Acero evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Acero evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -685,7 +685,7 @@
     },
     "/blender-3d/pokecodes/pets/fresa/evo2_rig.glb": {
       "title": "Fresa — evolución 2 (rig)",
-      "desc": "Fresa evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail/tail2/tail3 (cola, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Fresa evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail/tail2/tail3 (cola, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -710,7 +710,7 @@
     },
     "/blender-3d/pokecodes/pets/fuegito/evo2_rig.glb": {
       "title": "Fuegito — evolución 2 (rig)",
-      "desc": "Fuegito evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail/tail2/tail3 (cola de llamas, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Fuegito evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail/tail2/tail3 (cola de llamas, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -735,7 +735,7 @@
     },
     "/blender-3d/pokecodes/pets/hielo/evo2_rig.glb": {
       "title": "Hielo — evolución 2 (rig)",
-      "desc": "Hielo evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Hielo evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -760,7 +760,7 @@
     },
     "/blender-3d/pokecodes/pets/planta/evo2_rig.glb": {
       "title": "Planta — evolución 2 (rig)",
-      "desc": "Planta evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Planta evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -785,7 +785,7 @@
     },
     "/blender-3d/pokecodes/pets/robot/evo2_rig.glb": {
       "title": "Robot — evolución 2 (rig)",
-      "desc": "Robot evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 11 expresiones (dos ojos, sin boca) como morph targets.",
+      "desc": "Robot evo2 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 11 expresiones (dos ojos, sin boca) como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -810,7 +810,7 @@
     },
     "/blender-3d/pokecodes/pets/acero/evo3_rig.glb": {
       "title": "Acero — evolución 3 (rig)",
-      "desc": "Acero evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Acero evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -835,7 +835,7 @@
     },
     "/blender-3d/pokecodes/pets/fresa/evo3_rig.glb": {
       "title": "Fresa — evolución 3 (rig)",
-      "desc": "Fresa evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail/tail2/tail3 (cola, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Fresa evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail/tail2/tail3 (cola, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -860,7 +860,7 @@
     },
     "/blender-3d/pokecodes/pets/fuegito/evo3_rig.glb": {
       "title": "Fuegito — evolución 3 (rig)",
-      "desc": "Fuegito evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail/tail2/tail3 (cola de llamas, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Fuegito evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail/tail2/tail3 (cola de llamas, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -885,7 +885,7 @@
     },
     "/blender-3d/pokecodes/pets/hielo/evo3_rig.glb": {
       "title": "Hielo — evolución 3 (rig)",
-      "desc": "Hielo evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail/tail2/tail3 (cola de cristal, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Hielo evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R, tail/tail2/tail3 (cola de cristal, cadena de 3)), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -910,7 +910,7 @@
     },
     "/blender-3d/pokecodes/pets/planta/evo3_rig.glb": {
       "title": "Planta — evolución 3 (rig)",
-      "desc": "Planta evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 15 expresiones como morph targets.",
+      "desc": "Planta evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 15 expresiones como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",
@@ -935,7 +935,7 @@
     },
     "/blender-3d/pokecodes/pets/robot/evo3_rig.glb": {
       "title": "Robot — evolución 3 (rig)",
-      "desc": "Robot evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint y 11 expresiones (dos ojos, sin boca) como morph targets.",
+      "desc": "Robot evo3 con esqueleto (root, body, head, hand.L/R, foot.L/R), animaciones idle/walk/run/wave/jump/attack/hurt/celebrate/sleep/faint/getup/special/dodge/block/look y 11 expresiones (dos ojos, sin boca) como morph targets.",
       "tags": [
         "pokecodes",
         "mascota",

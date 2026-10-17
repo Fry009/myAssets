@@ -21,7 +21,9 @@ Salida del rig: `evoN_rig.glb` + `.blend` (`<pet>_rig.blend` para evo0, `<pet>_e
 | planta  | ✅ `lid` bajo por cejas | ✅ head, puños; `hand_exclude` rodilleras (+`hand_exclude_y`), `arm_amp` 0.75 | ✅ brazos de roca, `hand_z` | ✅ brazos de roca |
 | robot   | ✅ visor único, 9 caras | ✅ head, top=antena, 2 ojos + boca | ✅ 2 ojos sin boca (11 caras) | ✅ 2 ojos sin boca (11 caras) |
 
-Animaciones (todas, 10): `faint` (tambaleo y caída de espaldas girando `root` sobre los pies; el visor lo
+Animaciones (todas, 15): `getup` (empieza en la última pose de `faint`; ONE_SHOT), `special` (carga y lanza con
+los dos brazos: manos espejadas L +PUNCH / R −PUNCH), `dodge` (salto lateral a +X y vuelta), `block` (guardia con los
+dos brazos delante), `look` (73 f cíclico, gira torso y cabeza: head.Y = giro), `faint` (tambaleo y caída de espaldas girando `root` sobre los pies; el visor lo
 reproduce una vez y se queda tumbado, `ONE_SHOT` en ModelScene.jsx), `idle`, `walk`, `run` (16 f, cíclico, fase en el aire), `wave`, `jump`, `attack` (golpe con L + giro de torso), `hurt` (retroceso),
 `celebrate` (dos saltitos con brazos arriba), `sleep` (72 f, cabeceo + respiración). El visor pone una cara por clip
 (`CLIP_FACES` en ModelViewer.jsx; vuelve a neutra al cambiar de clip si no la tocó el usuario). Acero evo0 usa las mismas
@@ -104,6 +106,7 @@ No hay enlace directo a un modelo: hay que buscar y pulsar la tarjeta. Receta us
 9. (hecho) Inercia de brazos por clip (`make(..., lag={...})`): idle 3 f, walk 2 f, run 1 f.
 10. (hecho) `top="auto"` en fresa1-3, fuegito1-3, hielo1-3: puntas de orejas/llamas/hojas por encima del 55% entre
    ojos y punta de cabeza, con retraso 3 f. No en acero/planta/robot2-3 (metal/roca).
+11. (hecho) 5 clips nuevos: getup, special, dodge, block, look. Suelo comprobado en getup (±0.4 cm).
 Las caras se quedan como están (decisión del usuario: todo 3D, robots sin boca tal cual).
 Ideas siguientes: animar también las shape keys dentro de los clips del GLB (para que un motor de juego reciba la cara
 sin depender del visor), clips extra (p.ej. `faint`, `run`), y mejorar el parpadeo.

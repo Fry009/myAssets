@@ -8,7 +8,7 @@ import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js'
 // Parpadeo: cada 2–5 s cierra los ojos ~0.16 s
 const BLINK_TIME = 0.16
 // Clips que se reproducen una vez y se quedan en el último fotograma
-const ONE_SHOT = new Set(['faint'])
+const ONE_SHOT = new Set(['faint', 'getup'])
 
 function GltfModel({ src, clip, morphs, autoBlink, onRig }) {
   const { scene, animations } = useGLTF(src)

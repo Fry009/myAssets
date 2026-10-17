@@ -14,6 +14,11 @@ const CLIP_LABELS = {
   celebrate: 'Celebrar',
   sleep: 'Dormir',
   faint: 'Desmayo',
+  getup: 'Levantarse',
+  special: 'Especial',
+  dodge: 'Esquivar',
+  block: 'Defender',
+  look: 'Mirar',
 }
 
 // Cara que acompaña a cada clip (se filtra a las shape keys que tenga el modelo)
@@ -23,6 +28,10 @@ const CLIP_FACES = {
   celebrate: { eyes_happy: 1, mouth_smile: 1 },
   sleep: { blink: 1, mouth_open: 0.15 },
   faint: { blink: 1, eyes_sad: 0.5, mouth_o: 0.7 },
+  getup: { eyes_sad: 0.6, blink: 0.3 },
+  special: { eyes_angry: 1, mouth_open: 0.8 },
+  dodge: { eyes_wide: 1, mouth_o: 0.5 },
+  block: { eyes_angry: 0.6, blink: 0.4, mouth_sad: 0.5 },
 }
 
 // Presets de cara: solo aparecen si el modelo tiene esas shape keys

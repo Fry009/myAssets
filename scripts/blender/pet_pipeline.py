@@ -622,6 +622,49 @@ def animate(pet, rig_ob, arm_amp=1.0):
         (38, dict(down(-82, BACK), **hands((-10, 0, 0)), **T(14, 16), **{"foot.L": dict(rot=(15, 0, 0)), "foot.R": dict(rot=(15, 0, 0))})),
         (44, dict(down(-82, BACK), **hands((-12, 0, 0)), **T(16, 18), **{"foot.L": dict(rot=(15, 0, 0)), "foot.R": dict(rot=(15, 0, 0))})),
     ])
+    # levantarse: empieza en la última pose del desmayo y se incorpora (se pueden encadenar)
+    lying = lambda: dict(down(-82, BACK), **hands((-12, 0, 0)), **T(16, 18), **{"foot.L": dict(rot=(15, 0, 0)), "foot.R": dict(rot=(15, 0, 0))})
+    make("getup", [
+        (1, lying()),
+        (8, dict(down(-80, BACK + 0.012), **hands((20, 0, 0)), **T(6, 0), **{"foot.L": dict(rot=(25, 0, 0)), "foot.R": dict(rot=(25, 0, 0))})),
+        (16, dict(down(-40, BACK * 0.6), body=lean(20), **hands((30, 0, PUNCH * 30), (30, 0, -PUNCH * 30)), **T(10))),
+        (24, dict(down(-10, 0.01), body=lean(12, scl=(1.06, 0.9, 1.06)), **hands((10, 0, 0)), **T(6))),
+        (30, dict(body=lean(-3, scl=(0.97, 1.04, 0.97)), **T(-6))),
+        (33, dict(**T(0, 10))),
+        (36, dict(**T(0, -8))),
+        (40, dict()),
+    ])
+    # ataque especial: carga con los dos brazos atrás y lanza con los dos hacia delante (manos espejadas: L +, R -)
+    both = lambda a, z: hands((a, 0, PUNCH * z), (a, 0, -PUNCH * z))
+    make("special", [
+        (1, dict()),
+        (8, dict(root=dict(loc=(0, 0.008, 0)), body=lean(-10, scl=(1.05, 0.92, 1.05)), **both(35, -40), **T(-8))),
+        (10, dict(root=dict(loc=(0, 0.008, 0)), body=lean(-10, side=3, scl=(1.05, 0.92, 1.05)), **both(38, -42), **T(-8, 4))),
+        (12, dict(root=dict(loc=(0, 0.008, 0)), body=lean(-11, side=-3, scl=(1.06, 0.91, 1.06)), **both(36, -44), **T(-9, -4))),
+        (15, dict(root=dict(loc=(0, -0.018, 0)), body=lean(12, scl=(0.96, 1.05, 0.96)), **both(40, 60), **T(8))),
+        (21, dict(root=dict(loc=(0, -0.012, 0)), body=lean(8), **both(36, 52), **T(5))),
+        (32, dict()),
+    ])
+    # esquivar: salto lateral a la izquierda del personaje (+X) y vuelta al sitio
+    side_hop = lambda x, z, sd, sq=1.0: dict(root=dict(loc=(x, 0, z)), body=lean(0, side=sd, scl=(1 / sq ** 0.5, sq, 1 / sq ** 0.5)))
+    make("dodge", [
+        (1, dict()),
+        (4, dict(side_hop(0, 0, -6, 0.88), **hands((-10, 0, 0)), **T(6, 6))),
+        (8, dict(side_hop(0.05, 0.025, 12, 1.05), **hands((35, 0, 0)), **T(-6, -12),
+                 **{"foot.L": dict(rot=(-15, 0, 0)), "foot.R": dict(rot=(-15, 0, 0))})),
+        (11, dict(side_hop(0.055, 0, 4, 0.9), **hands((15, 0, 0)), **T(6, 8))),
+        (16, dict(side_hop(0.025, 0.018, -10, 1.04), **hands((30, 0, 0)), **T(-4, 10))),
+        (20, dict(side_hop(0, 0, -3, 0.92), **T(4, -4))),
+        (26, dict()),
+    ])
+    # defenderse: se encoge y se cubre con los brazos delante; encaja un golpe y baja la guardia
+    guard = lambda dy=0, sh=0: dict(root=dict(loc=(0, dy, 0)), body=lean(6, side=sh, scl=(1.04, 0.93, 1.04)), **both(50, 45), **T(10))
+    make("block", [(1, dict()), (5, guard()), (8, guard(0.007, 3)), (11, guard(0.002, -2)), (18, guard()), (24, dict())])
+    # mirar alrededor (reposo alternativo): gira torso y cabeza a un lado y al otro
+    look = lambda tw, hd, b=0: dict(body=dict(rot=(0, tw, 0), scl=(1 + 0.02 * b, 1 - 0.025 * b, 1 + 0.02 * b)),
+                                    **hands((5 - 4 * b, 0, 0)), **{**T(-3 * b, -tw * 0.4), "head": dict(rot=(-2 * b, hd, 0))})
+    make("look", [(1, look(0, 0)), (12, look(-10, -25, 1)), (24, look(-10, -25)), (32, look(0, 0, 1)),
+                  (44, look(10, 25)), (56, look(10, 25, 1)), (64, look(0, 0)), (73, look(0, 0))], cyclic=True)
     reset()
     print("clips", [(t.name, t.strips[0].frame_end) for t in ad.nla_tracks], "top" if has_top else "")
 
