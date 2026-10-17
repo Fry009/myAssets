@@ -4,3 +4,7 @@ dist
 public/asset-index.json
 *.log
 .DS_Store
+# .blend de rigs generados por scripts/blender/pet_pipeline.py (se regeneran con run-pet.mjs desde evoN.glb).
+# acero_rig.blend (evo0) NO: es la fuente de acero_reanim.py.
+public/assets/blender-3d/pokecodes/pets/*/*_rig.blend
+!public/assets/blender-3d/pokecodes/pets/acero/acero_rig.blend

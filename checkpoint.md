@@ -107,6 +107,9 @@ No hay enlace directo a un modelo: hay que buscar y pulsar la tarjeta. Receta us
 10. (hecho) `top="auto"` en fresa1-3, fuegito1-3, hielo1-3: puntas de orejas/llamas/hojas por encima del 55% entre
    ojos y punta de cabeza, con retraso 3 f. No en acero/planta/robot2-3 (metal/roca).
 11. (hecho) 5 clips nuevos: getup, special, dodge, block, look. Suelo comprobado en getup (±0.4 cm).
+12. (hecho) Los 23 `.blend` de rigs generados ya NO se versionan (.gitignore); siguen en disco y se regeneran con
+   run-pet.mjs. En git quedan acero/acero_rig.blend (fuente de acero_reanim.py), cube-critters.blend y pokeblocks.blend.
+   Lo ya subido sigue ocupando LFS en el historial (~7.2 GB); a partir de aquí una reexportación completa sube ~0.65 GB.
 Las caras se quedan como están (decisión del usuario: todo 3D, robots sin boca tal cual).
 Ideas siguientes: animar también las shape keys dentro de los clips del GLB (para que un motor de juego reciba la cara
 sin depender del visor), clips extra (p.ej. `faint`, `run`), y mejorar el parpadeo.
